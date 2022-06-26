@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import userServices from "../api/services/userServices";
+import userServices from "../api/services/user.services";
 
 export default function useRegister() {
   const [status, setStatus] = useState<
