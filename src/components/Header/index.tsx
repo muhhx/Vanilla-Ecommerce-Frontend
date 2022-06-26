@@ -34,7 +34,7 @@ export default function Header() {
             />
           </C.Button>
 
-          <C.Button onClick={() => {}}>
+          <C.Button>
             <Link to="/user">
               <C.Icon
                 src={theme.name === "light" ? userDark : userLight}

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import DiotRegular from "../assets/DidotRegular.ttf";
 
 interface Props {
   isOpen?: boolean;
@@ -8,7 +9,7 @@ interface Props {
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: Diot;
-        src: url('./assets/DidotRegular.ttf');
+        src: url(${DiotRegular});
     }
 
     * {
