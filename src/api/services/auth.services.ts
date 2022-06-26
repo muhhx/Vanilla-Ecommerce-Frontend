@@ -16,9 +16,14 @@ const createSession = async (email: string, password: string) => {
   return data;
 };
 
+const deleteSession = async (userId: string) => {
+  await axiosPrivate.delete(`/api/session/${userId}`);
+};
+
 const sessionServices = {
   verifySession,
   createSession,
+  deleteSession,
 };
 
 export default sessionServices;

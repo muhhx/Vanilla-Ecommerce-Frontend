@@ -8,6 +8,8 @@ import AdminLayout from "./components/AdminLayout";
 //Pages
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
+import User from "./pages/User";
 
 export default function Routing() {
   return (
@@ -16,10 +18,10 @@ export default function Routing() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<span>Login</span>} />
+          <Route path="/login" element={<Login />} />
 
           <Route element={<AuthLayout />}>
-            <Route path="/user" element={<span>Private</span>} />
+            <Route path="/user" element={<User />} />
           </Route>
 
           <Route element={<AdminLayout />}>

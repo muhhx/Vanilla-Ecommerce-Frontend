@@ -34,6 +34,11 @@ const authSlice = createSlice({
       state.userId = action.payload.userId;
       state.role = action.payload.role;
     },
+    logout: (state) => {
+      state.isAuth = false;
+      state.role = "user";
+      state.userId = "";
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -57,10 +62,7 @@ const authSlice = createSlice({
 });
 
 export const selectAuth = (state: RootState) => state.auth;
-export const { login } = authSlice.actions;
+export const { login, logout } = authSlice.actions;
 export default authSlice.reducer;
 
-//Login
-//Logout
-//VerifySession
 //RefreshSession

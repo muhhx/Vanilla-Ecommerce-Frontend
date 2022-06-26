@@ -1,38 +1,41 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../app/store";
-import { login } from "../features/authSlice";
+import { logout, selectAuth } from "../features/authSlice";
 import sessionServices from "../api/services/auth.services";
 import { useNavigate } from "react-router-dom";
 
-export default function useLogin() {
+export default function useLogout() {
   const dispatch: AppDispatch = useDispatch();
+  const auth = useSelector(selectAuth);
+
   const [status, setStatus] = useState<
     "idle" | "loading" | "failure" | "success"
   >("idle");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async (email: string, password: string) => {
+  const handleLogout = async () => {
     try {
       setStatus("loading");
       setError("");
 
-      const data = await sessionServices.createSession(email, password);
-      dispatch(login({ userId: data.userId, role: data.role }));
+      const data = await sessionServices.deleteSession(auth.userId);
+
+      dispatch(logout());
 
       setStatus("success");
-      navigate("/user");
+      navigate("/login");
     } catch (error: any) {
       if (error.response.data.message) {
         setError(error.response.data.message);
       } else {
-        setError("Erro ao fazer login");
+        setError("Erro ao fazer logout");
       }
 
       setStatus("failure");
     }
   };
 
-  return [status, error, handleLogin] as const;
+  return [status, error, handleLogout] as const;
 }
