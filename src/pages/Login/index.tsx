@@ -44,7 +44,6 @@ export default function Login() {
           </C.Form>
 
           <C.OptionsWrapper>
-            <C.Option to="/reset">Esqueceu a senha?</C.Option>
             <C.Option to="/register">Registrar-se</C.Option>
           </C.OptionsWrapper>
         </C.FormWrapper>

@@ -73,18 +73,14 @@ export default function Register() {
               inputType="password"
             />
 
-            {!validPassword && (
-              <C.Panel>
-                <C.PanelText>8 a 24 caracteres</C.PanelText>
-                <C.PanelText>
-                  Inclua ao menos uma letra uppercase, lowercase, um número e um
-                  caracter especial
-                </C.PanelText>
-                <C.PanelText>
-                  Caracteres especiais permitidos: !@#$%
-                </C.PanelText>
-              </C.Panel>
-            )}
+            <C.Panel>
+              <C.PanelText>8 a 24 caracteres</C.PanelText>
+              <C.PanelText>
+                Inclua ao menos uma letra uppercase, lowercase, um número e um
+                caracter especial
+              </C.PanelText>
+              <C.PanelText>Caracteres especiais permitidos: !@#$%</C.PanelText>
+            </C.Panel>
 
             <Input
               label="Confirm password"

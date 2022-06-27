@@ -64,5 +64,3 @@ const authSlice = createSlice({
 export const selectAuth = (state: RootState) => state.auth;
 export const { login, logout } = authSlice.actions;
 export default authSlice.reducer;
-
-//RefreshSession

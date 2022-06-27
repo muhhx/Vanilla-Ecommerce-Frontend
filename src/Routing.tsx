@@ -7,9 +7,12 @@ import AdminLayout from "./components/AdminLayout";
 
 //Pages
 import Home from "./pages/Home";
+import Shop from "./pages/Shop";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import User from "./pages/User";
+import Admin from "./pages/Admin";
+import NotFound from "./pages/404";
 
 export default function Routing() {
   return (
@@ -19,14 +22,17 @@ export default function Routing() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/shop" element={<Shop />} />
 
           <Route element={<AuthLayout />}>
             <Route path="/user" element={<User />} />
+
+            <Route element={<AdminLayout />}>
+              <Route path="/admin" element={<Admin />} />
+            </Route>
           </Route>
 
-          <Route element={<AdminLayout />}>
-            <Route path="/admin" element={<span>Admin page</span>} />
-          </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>

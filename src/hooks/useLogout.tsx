@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../app/store";
 import { logout, selectAuth } from "../features/authSlice";
+import { resetUser } from "../features/userSlice";
 import sessionServices from "../api/services/auth.services";
 import { useNavigate } from "react-router-dom";
 
@@ -23,6 +24,7 @@ export default function useLogout() {
       const data = await sessionServices.deleteSession(auth.userId);
 
       dispatch(logout());
+      dispatch(resetUser());
 
       setStatus("success");
       navigate("/login");
