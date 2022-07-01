@@ -1,8 +1,11 @@
-interface IOption {
-  rgb: string;
+export interface IProductData {
   name: string;
-  sizes: string[];
-  images: string[];
+  description: string;
+  price: string;
+  gender: string;
+  categoryId: string;
+  collectionId: string;
+  thumb: string | null;
 }
 
 export default interface IProduct {
@@ -11,10 +14,10 @@ export default interface IProduct {
   description: string;
   price: number;
   discountPrice: null | number;
-  isAvailable: boolean;
+  isSoldOut: boolean;
+  display: boolean;
   isNew: boolean;
   gender: ["all", "men", "women"];
-  options: IOption[];
   thumb: string;
   categoryId: string;
   collectionId: string;

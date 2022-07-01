@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as C from "./styles";
+import CreateProduct from "./CreateProduct";
 
 export default function Admin() {
   const [currentPage, setCurrentPage] = useState<
@@ -16,21 +17,22 @@ export default function Admin() {
               onClick={() => setCurrentPage("Produtos")}
               isSelected={currentPage === "Produtos" && true}
             >
-              Favoritos
+              Produtos
             </C.Option>
             <C.Option
               onClick={() => setCurrentPage("Adicionar")}
               isSelected={currentPage === "Adicionar" && true}
             >
-              Pedidos
+              Adicionar
             </C.Option>
             <C.Option
               onClick={() => setCurrentPage("Pedidos")}
               isSelected={currentPage === "Pedidos" && true}
             >
-              Conta (deletar)
+              Pedidos
             </C.Option>
           </C.Options>
+          {currentPage === "Adicionar" && <CreateProduct />}
         </C.Header>
       </C.Container>
     </C.Section>
