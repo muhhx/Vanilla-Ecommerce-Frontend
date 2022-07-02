@@ -1,45 +1,27 @@
 import styled from "styled-components";
 
 interface IProps {
-  isSelected?: boolean;
   image?: string;
+  isSelected?: boolean;
 }
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 50px;
-  margin-bottom: 50px;
-`;
-
-export const SelectWrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  gap: 30px;
   justify-content: space-between;
-  gap: 20px;
-
-  @media only screen and (max-width: 300px) {
-    flex-direction: column;
-  }
-`;
-
-export const Title = styled.h1`
-  color: ${({ theme }) => theme.color.fontMain};
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
-export const OptionWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
+`;
+
+export const Sizes = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Size = styled.span`
+  color: ${({ theme }) => theme.color.fontOrange};
 `;
 
 export const Button = styled.button`
@@ -68,25 +50,6 @@ export const Button = styled.button`
   }
 `;
 
-export const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Sizes = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Size = styled.span`
-  color: ${({ theme }) => theme.color.fontOrange};
-`;
-
 export const Remove = styled.button`
   border: none;
   background-color: transparent;
@@ -94,10 +57,6 @@ export const Remove = styled.button`
   font-family: inherit;
   color: ${({ theme }) => theme.color.fontMain};
   cursor: pointer;
-`;
-
-export const UploadTransparent = styled.input`
-  display: none;
 `;
 
 export const Upload = styled.label`

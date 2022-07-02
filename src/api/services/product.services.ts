@@ -10,7 +10,7 @@ const getProducts = async () => {
 const createProduct = async (payload: IProductData) => {
   const { data } = await axiosPrivate.post("/api/product", payload);
 
-  return data as string;
+  return data as IProduct;
 };
 
 const productServices = {

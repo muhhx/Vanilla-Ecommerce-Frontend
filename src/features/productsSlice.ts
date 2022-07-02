@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import productServices from "../api/services/product.services";
-import { IProductSlice } from "../types/product.types";
+import IProduct, { IProductSlice } from "../types/product.types";
 import { RootState } from "../app/store";
 
 const initialState: IProductSlice = {
@@ -26,7 +26,11 @@ export const getProducts = createAsyncThunk(
 const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    addProduct: (state, action: PayloadAction<IProduct>) => {
+      state.products.push(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getProducts.pending, (state) => {
@@ -44,4 +48,9 @@ const productSlice = createSlice({
 });
 
 export const selectProducts = (state: RootState) => state.products;
+export const { addProduct } = productSlice.actions;
 export default productSlice.reducer;
+
+//AddProduct (when you create one)
+//UpdateProduct (when you update one)
+//RemoveProduct (when you remove one)

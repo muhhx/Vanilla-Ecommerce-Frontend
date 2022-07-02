@@ -5,26 +5,30 @@ interface IProps {
   handleUpdateOption: (
     key: number,
     field: string,
-    newState: string | string[] | IImage[] | React.ChangeEvent<HTMLInputElement>
+    newState:
+      | string
+      | string[]
+      | IImage[]
+      | React.ChangeEvent<HTMLInputElement>
+      | boolean
   ) => void;
   label: string;
   optionKey: number;
   field: string;
 }
-
-export default function Color({
+export default function CustomInput({
   label,
   optionKey,
   field,
   handleUpdateOption,
 }: IProps) {
   return (
-    <C.Wrapper>
+    <C.InputWrapper>
       <C.Label>{label}</C.Label>
       <C.Input
-        type="color"
+        type={"text"}
         onChange={(e) => handleUpdateOption(optionKey, field, e.target.value)}
       />
-    </C.Wrapper>
+    </C.InputWrapper>
   );
 }

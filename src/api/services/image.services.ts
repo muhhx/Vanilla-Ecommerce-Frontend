@@ -7,11 +7,8 @@ const uploadFiles = async (files: FormData) => {
   return data as IImage[];
 };
 
-const deleteFiles = async () => {};
-
 const imageServices = {
   uploadFiles,
-  deleteFiles,
 };
 
 export default imageServices;

@@ -7,7 +7,6 @@ export default function useImageUpload() {
     "idle" | "loading" | "failure" | "success"
   >("idle");
   const [error, setError] = useState("");
-  const [images, setImages] = useState<IImage[] | null>(null);
 
   const handleUploadImages = async (files: FileList) => {
     try {
@@ -22,8 +21,8 @@ export default function useImageUpload() {
 
       const imagesResponse = await imageServices.uploadFiles(formData);
 
-      setImages(imagesResponse);
       setStatus("success");
+      return imagesResponse;
     } catch (error: any) {
       if (error.response.data.message) {
         setError(error.response.data.message);
@@ -35,5 +34,5 @@ export default function useImageUpload() {
     }
   };
 
-  return [status, error, images, handleUploadImages] as const;
+  return [status, error, handleUploadImages] as const;
 }

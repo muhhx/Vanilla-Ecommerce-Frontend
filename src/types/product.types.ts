@@ -1,3 +1,17 @@
+export interface IImage {
+  key: string;
+  url: string;
+}
+
+export interface IOption {
+  color: string;
+  name: string;
+  sizes: string[];
+  images: IImage[];
+  key: number;
+  isWritten: boolean;
+}
+
 export interface IProductData {
   name: string;
   description: string;
@@ -5,7 +19,7 @@ export interface IProductData {
   gender: string;
   categoryId: string;
   collectionId: string;
-  thumb: string | null;
+  options: IOption[];
 }
 
 export default interface IProduct {
@@ -16,11 +30,12 @@ export default interface IProduct {
   discountPrice: null | number;
   isSoldOut: boolean;
   display: boolean;
-  isNew: boolean;
+  isNewProduct: boolean;
   gender: ["all", "men", "women"];
   thumb: string;
   categoryId: string;
   collectionId: string;
+  options: IOption[];
   createdAt: Date;
   updatedAt: Date;
 }

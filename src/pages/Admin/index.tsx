@@ -1,10 +1,11 @@
 import { useState } from "react";
+import Create from "./Create";
+import EditProducts from "./EditProducts";
 import * as C from "./styles";
-import CreateProduct from "./CreateProduct";
 
 export default function Admin() {
   const [currentPage, setCurrentPage] = useState<
-    "Produtos" | "Adicionar" | "Pedidos"
+    "Produtos" | "Adicionar" | "CreateCollection" | "Pedidos"
   >("Produtos");
 
   return (
@@ -26,13 +27,20 @@ export default function Admin() {
               Adicionar
             </C.Option>
             <C.Option
+              onClick={() => setCurrentPage("CreateCollection")}
+              isSelected={currentPage === "CreateCollection" && true}
+            >
+              Criar Coleção
+            </C.Option>
+            <C.Option
               onClick={() => setCurrentPage("Pedidos")}
               isSelected={currentPage === "Pedidos" && true}
             >
               Pedidos
             </C.Option>
           </C.Options>
-          {currentPage === "Adicionar" && <CreateProduct />}
+          {currentPage === "Adicionar" && <Create />}
+          {currentPage === "Produtos" && <EditProducts />}
         </C.Header>
       </C.Container>
     </C.Section>

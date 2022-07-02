@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
           props.isOpen === true ? "hidden" : "initial"}
     }
 
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
         height: 8px;
         width: 0px;
     }
@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
     
     ::-webkit-scrollbar-thumb {
         background-color: orange;
-    }
+    } */
     input[type=range] {
         -webkit-appearance: none;
         background-color: ${(props: Props) => props.bgColor};
