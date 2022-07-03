@@ -27,11 +27,12 @@ export default interface IProduct {
   name: string;
   description: string;
   price: number;
-  discountPrice: null | number;
+  discountPrice: number;
+  hasDiscount: boolean;
   isSoldOut: boolean;
   display: boolean;
   isNewProduct: boolean;
-  gender: ["all", "men", "women"];
+  gender: string[];
   thumb: string;
   categoryId: string;
   collectionId: string;
@@ -42,6 +43,22 @@ export default interface IProduct {
 
 export interface IProductSlice {
   products: IProduct[];
+  filteredProducts: IProduct[];
   status: "idle" | "pending" | "rejected" | "success";
   error: string | null;
+}
+
+export interface IProductUpdate {
+  name?: string;
+  description?: string;
+  display?: boolean;
+  isSoldOut?: boolean;
+  isNewProduct?: boolean;
+  price?: string;
+  discountPrice?: string;
+  hasDiscount?: boolean;
+  gender?: string;
+  categoryId?: string;
+  collectionId?: string;
+  thumb?: string;
 }

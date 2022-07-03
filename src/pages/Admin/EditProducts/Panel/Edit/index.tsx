@@ -1,23 +1,27 @@
 import { useState } from "react";
+import useDeleteProduct from "../../../../../hooks/useDeleteProduct";
+import useUpdateProduct from "../../../../../hooks/useUpdateProduct";
 import RadioInput from "../../../../../components/RadioInput";
 import IProduct from "../../../../../types/product.types";
+import Spinner from "../../../../../components/Spinner";
 import Select from "../../../../../components/Select";
 import Input from "../../../../../components/Input";
 import * as C from "./styles";
 
 export default function Edit({ product }: { product: IProduct }) {
+  const [deleteStatus, deleteError, deleteProduct] = useDeleteProduct();
+  const [updateStatus, updateError, updateProduct] = useUpdateProduct();
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
   const [display, setDisplay] = useState(product.display);
   const [isSoldOut, setIsSoldOut] = useState(product.isSoldOut);
   const [isNewProduct, setIsNewProduct] = useState(product.isNewProduct);
-  const [hasDiscount, setHasDiscount] = useState(
-    product.discountPrice !== null ? true : false
-  );
+  const [hasDiscount, setHasDiscount] = useState(product.hasDiscount);
 
   const [price, setPrice] = useState("");
-  const [discontPrice, setDiscountPrice] = useState("");
+  const [discountPrice, setDiscountPrice] = useState("");
 
   const [gender, setGender] = useState<string>(product.gender[1]);
   const [categoryId, setCategoryId] = useState(product.categoryId);
@@ -43,6 +47,12 @@ export default function Edit({ product }: { product: IProduct }) {
 
   return (
     <C.Container>
+      {deleteStatus === "failure" && <C.Error>{deleteError}</C.Error>}
+      {updateStatus === "failure" && <C.Error>{updateError}</C.Error>}
+      {updateStatus === "success" && (
+        <C.Error>Produto atualizado com sucesso!</C.Error>
+      )}
+
       <C.Wrapper>
         <Input
           inputType="text"
@@ -103,7 +113,7 @@ export default function Edit({ product }: { product: IProduct }) {
           <Input
             inputType="number"
             label="Novo Desconto"
-            state={discontPrice}
+            state={discountPrice}
             setState={setDiscountPrice}
             validState={true}
           />
@@ -141,12 +151,41 @@ export default function Edit({ product }: { product: IProduct }) {
       </C.ImagesContainer>
 
       <C.Wrapper>
-        <C.EditButton>Salvar Alterações</C.EditButton>
-        <C.DeleteButton>Deletar Produto</C.DeleteButton>
+        <C.EditButton
+          onClick={() =>
+            updateProduct(
+              {
+                name,
+                description,
+                display,
+                isSoldOut,
+                isNewProduct,
+                price,
+                discountPrice,
+                hasDiscount,
+                gender,
+                categoryId,
+                collectionId,
+                thumb,
+              },
+              product._id
+            )
+          }
+          disabled={updateStatus === "loading"}
+        >
+          {updateStatus === "loading" ? <Spinner /> : "Salvar Alterações"}
+        </C.EditButton>
+        <C.DeleteButton
+          onClick={() => deleteProduct(product._id)}
+          disabled={deleteStatus === "loading"}
+        >
+          {deleteStatus === "loading" ? <Spinner /> : "Deletar Produto"}
+        </C.DeleteButton>
       </C.Wrapper>
     </C.Container>
   );
 }
+
 //Name, description
 //price, discountPrice (calculate discount percentage)
 //display, isSoldOut, isNewProduct

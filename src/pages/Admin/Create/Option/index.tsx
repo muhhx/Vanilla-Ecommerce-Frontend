@@ -98,7 +98,7 @@ export default function Option({ option, handleUpdateOption }: IProps) {
         </C.Sizes>
       ))}
 
-      {status === "idle" ? (
+      {status === "idle" || status === "failure" ? (
         <input
           type="file"
           accept="image/*"

@@ -49,6 +49,9 @@ export const EditButton = styled.button`
   background-color: ${({ theme }) => theme.color.reverseColor};
   cursor: pointer;
   transition: 0.2s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:disabled {
     background-color: gray;
@@ -71,6 +74,9 @@ export const DeleteButton = styled.button`
   background-color: ${({ theme }) => theme.color.fontOrange};
   cursor: pointer;
   transition: 0.2s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:disabled {
     background-color: gray;
@@ -114,5 +120,12 @@ export const Image = styled.button`
 
 export const Label = styled.p`
   color: ${({ theme }) => theme.color.fontMain};
+  font-size: 1.2rem;
+`;
+
+export const Error = styled.p`
+  width: 100%;
+  color: ${({ theme }) => theme.color.fontOrange};
+  text-align: center;
   font-size: 1.2rem;
 `;
