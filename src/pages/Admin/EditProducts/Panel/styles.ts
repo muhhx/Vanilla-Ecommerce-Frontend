@@ -45,12 +45,17 @@ export const Data = styled.div`
 
 export const Thumb = styled.div`
   height: 100px;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   background-color: rgb(245, 245, 247);
   background-image: url(${(props: IProps) => props.image});
   background-position: center;
   background-size: auto 100%;
   background-repeat: no-repeat;
+
+  @media only screen and (max-width: 600px) {
+    max-width: initial;
+  }
 `;
 
 export const Infos = styled.div`

@@ -10,6 +10,12 @@ const getProducts = async () => {
   return data as IProduct[];
 };
 
+const getProduct = async (productId: string) => {
+  const { data } = await axiosPublic.get(`/api/product/${productId}`);
+
+  return data as IProduct;
+};
+
 const createProduct = async (payload: IProductData) => {
   const { data } = await axiosPrivate.post("/api/product", payload);
 
@@ -26,6 +32,7 @@ const updateProduct = (payload: IProductUpdate, productId: string) => {
 
 const productServices = {
   getProducts,
+  getProduct,
   createProduct,
   deleteProduct,
   updateProduct,

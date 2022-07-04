@@ -4,6 +4,7 @@ import Routing from "./Routing";
 import { GlobalStyle } from "./styles/globalStyles";
 import { ThemeProvider } from "styled-components";
 import useTheme from "./contexts/ThemeProvider/useTheme";
+import useMenu from "./contexts/MenuProvider/useMenu";
 
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "./app/store";
@@ -13,6 +14,7 @@ import { getProducts } from "./features/productsSlice";
 
 export default function App() {
   const { theme } = useTheme();
+  const { isMenuOpen } = useMenu();
   const { userId } = useSelector(selectAuth);
   const dispatch: AppDispatch = useDispatch();
 
@@ -36,7 +38,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routing />
-      <GlobalStyle />
+      <GlobalStyle isMenuOpen={isMenuOpen} />
     </ThemeProvider>
   );
 }

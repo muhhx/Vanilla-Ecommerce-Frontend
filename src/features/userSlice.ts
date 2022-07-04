@@ -1,13 +1,15 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import userServices from "../api/services/user.services";
+import favoriteServices from "../api/services/favorite.services";
 import { RootState } from "../app/store";
-import { IUser } from "../types/user.types";
+import { IUser, IFavorite } from "../types/user.types";
 
 const initialState: IUser = {
   name: null,
   email: null,
   status: "idle",
   error: null,
+  favorites: [],
 };
 
 export const getUser = createAsyncThunk(
@@ -15,8 +17,9 @@ export const getUser = createAsyncThunk(
   async ({ userId }: { userId: string }, thunkAPI) => {
     try {
       const user = await userServices.getUser(userId);
+      const favorites = await favoriteServices.getFavorites(userId);
 
-      return user;
+      return { user, favorites };
     } catch (error) {
       console.log(error);
       return thunkAPI.rejectWithValue(
@@ -36,6 +39,9 @@ const userSlice = createSlice({
       state.error = null;
       state.status = "idle";
     },
+    addFavorite: (state, action: PayloadAction<IFavorite>) => {
+      state.favorites.push(action.payload);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -48,15 +54,13 @@ const userSlice = createSlice({
       })
       .addCase(getUser.fulfilled, (state, { payload }) => {
         state.status = "success";
-        state.email = payload.email;
-        state.name = payload.name;
+        state.email = payload.user.email;
+        state.name = payload.user.name;
+        state.favorites = payload.favorites;
       });
   },
 });
 
 export const selectUser = (state: RootState) => state.user;
-export const { resetUser } = userSlice.actions;
+export const { resetUser, addFavorite } = userSlice.actions;
 export default userSlice.reducer;
-
-//Delete user
-//Update user

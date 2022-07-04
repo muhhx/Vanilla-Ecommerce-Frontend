@@ -10,6 +10,7 @@ export const Control = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+
   @media only screen and (max-width: 300px) {
     flex-direction: column;
     align-items: flex-start;
@@ -20,6 +21,7 @@ export const Wrapper = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+
   @media only screen and (max-width: 300px) {
     width: 100%;
     border-bottom: solid 0.5px ${({ theme }) => theme.color.fontMain};

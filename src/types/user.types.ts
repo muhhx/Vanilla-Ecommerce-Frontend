@@ -1,3 +1,8 @@
+export interface IFavorite {
+  _id: string;
+  productId: string;
+}
+
 export interface IUserResponse {
   data: {
     name: string;
@@ -10,4 +15,5 @@ export interface IUser {
   email: null | string;
   status: "idle" | "pending" | "rejected" | "success";
   error: null | string;
+  favorites: IFavorite[];
 }

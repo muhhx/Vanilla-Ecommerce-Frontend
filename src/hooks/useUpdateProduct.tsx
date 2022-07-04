@@ -29,7 +29,7 @@ export default function useUpdateProduct() {
         isNewProduct: payloadData.isNewProduct,
         hasDiscount: payloadData.hasDiscount,
         discountPrice: payloadData.discountPrice || undefined,
-        price: payloadData.price,
+        price: payloadData.price || undefined,
         gender: payloadData.gender || undefined,
         categoryId: payloadData.categoryId || undefined,
         collectionId: payloadData.collectionId || undefined,

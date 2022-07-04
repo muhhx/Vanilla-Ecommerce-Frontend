@@ -43,7 +43,6 @@ export default interface IProduct {
 
 export interface IProductSlice {
   products: IProduct[];
-  filteredProducts: IProduct[];
   status: "idle" | "pending" | "rejected" | "success";
   error: string | null;
 }

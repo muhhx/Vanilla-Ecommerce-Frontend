@@ -5,11 +5,11 @@ import { selectUser } from "../../features/userSlice";
 import * as C from "./styles";
 
 export default function User() {
-  const { name, email } = useSelector(selectUser);
-  const [status, error, handleLogout] = useLogout();
-  const [currentPage, setCurrentPage] = useState<
-    "conta" | "favs" | "pedidos" | "addresses" | "payments"
-  >("favs");
+  const { name, email, favorites, status, error } = useSelector(selectUser);
+  const [LogoutStatus, LogoutError, handleLogout] = useLogout();
+  const [currentPage, setCurrentPage] = useState<"conta" | "favs" | "pedidos">(
+    "favs"
+  );
 
   return (
     <C.Section>
@@ -30,18 +30,6 @@ export default function User() {
               isSelected={currentPage === "pedidos" && true}
             >
               Pedidos
-            </C.Option>
-            <C.Option
-              onClick={() => setCurrentPage("addresses")}
-              isSelected={currentPage === "addresses" && true}
-            >
-              Endereços
-            </C.Option>
-            <C.Option
-              onClick={() => setCurrentPage("payments")}
-              isSelected={currentPage === "payments" && true}
-            >
-              Pagamentos
             </C.Option>
             <C.Option
               onClick={() => setCurrentPage("conta")}

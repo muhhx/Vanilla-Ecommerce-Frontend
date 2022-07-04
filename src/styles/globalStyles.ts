@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import DiotRegular from "../assets/DidotRegular.ttf";
 
 interface Props {
-  isOpen?: boolean;
+  isMenuOpen?: boolean;
   bgColor?: string;
 }
 
@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         font-family: 'Jost', sans-serif;
         overflow: ${(props: Props) =>
-          props.isOpen === true ? "hidden" : "initial"}
+          props.isMenuOpen === true ? "hidden" : "initial"}
     }
 
     /* ::-webkit-scrollbar {

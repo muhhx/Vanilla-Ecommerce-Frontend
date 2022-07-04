@@ -8,7 +8,6 @@ import { RootState } from "../app/store";
 
 const initialState: IProductSlice = {
   products: [],
-  filteredProducts: [],
   status: "idle",
   error: null,
 };
