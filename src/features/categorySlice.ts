@@ -1,7 +1,7 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import categoryServices from "../api/services/category.services";
 import { RootState } from "../app/store";
-import { ICategorySlice } from "../types/category.types";
+import ICategory, { ICategorySlice } from "../types/category.types";
 
 const initialState: ICategorySlice = {
   categories: [],
@@ -25,7 +25,29 @@ export const getCategories = createAsyncThunk(
 const categorySlice = createSlice({
   name: "category",
   initialState,
-  reducers: {},
+  reducers: {
+    addCategory: (state, action: PayloadAction<ICategory>) => {
+      state.categories.push(action.payload);
+    },
+    deleteCategory: (state, action: PayloadAction<string>) => {
+      state.categories = state.categories.filter(
+        (category) => category._id !== action.payload
+      );
+    },
+    updateCategory: (state, action: PayloadAction<ICategory>) => {
+      const category = state.categories.filter(
+        (category) => category._id === action.payload._id
+      )[0];
+
+      category.name = action.payload.name;
+
+      state.categories = state.categories.filter(
+        (category) => category._id !== action.payload._id
+      );
+
+      state.categories.push(category);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getCategories.pending, (state) => {
@@ -43,4 +65,6 @@ const categorySlice = createSlice({
 });
 
 export const selectCategories = (state: RootState) => state.category;
+export const { addCategory, deleteCategory, updateCategory } =
+  categorySlice.actions;
 export default categorySlice.reducer;

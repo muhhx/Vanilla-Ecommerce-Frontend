@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Create from "./Create";
 import EditProducts from "./EditProducts";
+import Category from "./Category";
 import * as C from "./styles";
 
 export default function Admin() {
@@ -51,6 +52,7 @@ export default function Admin() {
           </C.Options>
           {currentPage === "produtos" && <EditProducts />}
           {currentPage === "criarProdutos" && <Create />}
+          {currentPage === "criarCategory" && <Category />}
         </C.Header>
       </C.Container>
     </C.Section>
