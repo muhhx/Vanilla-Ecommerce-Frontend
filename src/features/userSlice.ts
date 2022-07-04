@@ -42,6 +42,11 @@ const userSlice = createSlice({
     addFavorite: (state, action: PayloadAction<IFavorite>) => {
       state.favorites.push(action.payload);
     },
+    removeFavorite: (state, action: PayloadAction<string>) => {
+      state.favorites = state.favorites.filter(
+        (favorite) => favorite._id !== action.payload
+      );
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -62,5 +67,5 @@ const userSlice = createSlice({
 });
 
 export const selectUser = (state: RootState) => state.user;
-export const { resetUser, addFavorite } = userSlice.actions;
+export const { resetUser, addFavorite, removeFavorite } = userSlice.actions;
 export default userSlice.reducer;

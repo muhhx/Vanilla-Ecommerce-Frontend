@@ -12,18 +12,17 @@ const createFavorite = async (userId: string, productId: string) => {
     productId,
   });
 
-  return data as IFavorite; //Id do product
+  return data as IFavorite;
 };
 
 const removeFavorite = async (favoriteId: string) => {
-  const { data } = await axiosPrivate.delete(`/api/favorite/${favoriteId}`);
-
-  return data as IFavorite; //Id do produto removido
+  await axiosPrivate.delete(`/api/favorite/${favoriteId}`);
 };
 
 const favoriteServices = {
   getFavorites,
   createFavorite,
+  removeFavorite,
 };
 
 export default favoriteServices;

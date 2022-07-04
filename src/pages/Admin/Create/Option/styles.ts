@@ -84,11 +84,12 @@ export const ImagesContainer = styled.div`
 
 export const Image = styled.div`
   width: 100%;
-  height: 100px;
+  height: 150px;
   background-image: url(${(props: IProps) => props.image});
   background-position: center;
-  background-size: cover;
-  background-color: black;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-color: rgb(245, 245, 247);
 `;
 
 export const ImageWrapper = styled.div`

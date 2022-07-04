@@ -1,7 +1,8 @@
 import { useState } from "react";
-import useLogout from "../../hooks/useLogout";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
+import useLogout from "../../hooks/useLogout";
+import Favorites from "./Favorites";
 import * as C from "./styles";
 
 export default function User() {
@@ -38,6 +39,7 @@ export default function User() {
               Conta (deletar)
             </C.Option>
           </C.Options>
+          {currentPage === "favs" && <Favorites favorites={favorites} />}
         </C.Header>
       </C.Container>
     </C.Section>
