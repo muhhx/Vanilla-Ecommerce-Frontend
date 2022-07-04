@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface IProps {
+  isClicked?: boolean;
+}
+
 export const Section = styled.section`
   width: 100%;
   display: flex;
