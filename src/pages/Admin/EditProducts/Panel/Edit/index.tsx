@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectCategories } from "../../../../../features/categorySlice";
+
 import useDeleteProduct from "../../../../../hooks/useDeleteProduct";
 import useUpdateProduct from "../../../../../hooks/useUpdateProduct";
 import RadioInput from "../../../../../components/RadioInput";
@@ -9,6 +12,8 @@ import Input from "../../../../../components/Input";
 import * as C from "./styles";
 
 export default function Edit({ product }: { product: IProduct }) {
+  const { categories } = useSelector(selectCategories);
+
   const [deleteStatus, deleteError, deleteProduct] = useDeleteProduct();
   const [updateStatus, updateError, updateProduct] = useUpdateProduct();
 
@@ -34,12 +39,7 @@ export default function Edit({ product }: { product: IProduct }) {
     { name: "AW22", _id: "2324rsfe" },
     { name: "SS22", _id: "er23r23r23" },
   ];
-  const categories = [
-    { name: "Shirt", _id: "23423423423" },
-    { name: "Jacket", _id: "123123123" },
-    { name: "Shoe", _id: "2324rsfe" },
-    { name: "Cardigan", _id: "er23r23r23" },
-  ];
+
   const genders = [
     { name: "Men", _id: "men" },
     { name: "Women", _id: "women" },

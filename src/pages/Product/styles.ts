@@ -116,15 +116,21 @@ export const Wrapper = styled.div`
 
 export const Price = styled.h1`
   color: ${({ theme }) => theme.color.fontMain};
-  font-size: ${(props: IProps) => (props.discount === true ? "12px" : "18px")};
-  text-decoration: ${(props: IProps) =>
-    props.discount === true ? "line-through" : "initial"};
+  font-size: 18px;
+  text-decoration: initial;
   font-weight: 400;
 `;
 
 export const Discount = styled.h1`
   color: ${({ theme }) => theme.color.fontOrange};
   font-size: 18px;
+  font-weight: 400;
+`;
+
+export const PriceDiscount = styled.h1`
+  color: ${({ theme }) => theme.color.fontMain};
+  font-size: 12px;
+  text-decoration: line-through;
   font-weight: 400;
 `;
 
@@ -143,9 +149,9 @@ export const OptionName = styled.span`
 export const Option = styled.button`
   background-color: transparent;
   color: ${(props: IProps) =>
-    props.isSelected === true
-      ? "#ff670f"
-      : ({ theme }) => theme.color.fontMain};
+    !props.isSelected === true
+      ? ({ theme }) => theme.color.fontMain
+      : "#ff670f"};
   border: none;
   font-size: 12px;
   font-weight: 400;

@@ -1,5 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { selectCategories } from "../../../features/categorySlice";
 import IProduct from "../../../types/product.types";
 import Filter from "./Filter";
 import * as C from "./styles";
@@ -10,6 +11,8 @@ interface IProps {
 }
 
 export default function Filtering({ products, setFilteredProducts }: IProps) {
+  const { categories } = useSelector(selectCategories);
+
   const [filterOpen, setFilterOpen] = useState(false);
   const [genderFilter, setGenderFilter] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
@@ -22,12 +25,6 @@ export default function Filtering({ products, setFilteredProducts }: IProps) {
   //Com isso, vou ter um objeto sempre atualizado com todas as propriedades de filtragem
 
   const genders = ["all", "men", "women"];
-  const categories = [
-    { name: "Shirt", _id: "23423423423" },
-    { name: "Jacket", _id: "123123123" },
-    { name: "Shoe", _id: "2324rsfe" },
-    { name: "Cardigan", _id: "er23r23r23" },
-  ];
   const collections = [
     { name: "AW21", _id: "23423423423" },
     { name: "SS21", _id: "123123123" },

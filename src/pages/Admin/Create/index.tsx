@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { IOption, IImage } from "../../../types/product.types";
+import { useSelector } from "react-redux";
+import { selectCategories } from "../../../features/categorySlice";
 import useCreateProduct from "../../../hooks/useCreateProduct";
+import { IOption, IImage } from "../../../types/product.types";
 import Select from "../../../components/Select";
 import Input from "../../../components/Input";
 import Option from "./Option";
@@ -8,6 +10,7 @@ import Spinner from "../../../components/Spinner";
 import * as C from "./styles";
 
 export default function Create() {
+  const { categories } = useSelector(selectCategories);
   const [status, error, createProduct] = useCreateProduct();
 
   const [name, setName] = useState("");
@@ -33,12 +36,6 @@ export default function Create() {
     { name: "SS21", _id: "123123123" },
     { name: "AW22", _id: "2324rsfe" },
     { name: "SS22", _id: "er23r23r23" },
-  ];
-  const categories = [
-    { name: "Shirt", _id: "23423423423" },
-    { name: "Jacket", _id: "123123123" },
-    { name: "Shoe", _id: "2324rsfe" },
-    { name: "Cardigan", _id: "er23r23r23" },
   ];
   const genders = [
     { name: "Men", _id: "men" },

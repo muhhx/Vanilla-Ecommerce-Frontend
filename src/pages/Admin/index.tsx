@@ -5,8 +5,12 @@ import * as C from "./styles";
 
 export default function Admin() {
   const [currentPage, setCurrentPage] = useState<
-    "Produtos" | "Adicionar" | "CreateCollection" | "Pedidos"
-  >("Produtos");
+    | "produtos"
+    | "criarProdutos"
+    | "criarCollection"
+    | "criarCategory"
+    | "pedidos"
+  >("produtos");
 
   return (
     <C.Section>
@@ -15,32 +19,38 @@ export default function Admin() {
           <C.Title>Admin</C.Title>
           <C.Options>
             <C.Option
-              onClick={() => setCurrentPage("Produtos")}
-              isSelected={currentPage === "Produtos" && true}
+              onClick={() => setCurrentPage("produtos")}
+              isSelected={currentPage === "produtos" && true}
             >
-              Produtos
+              Gerenciar Produtos
             </C.Option>
             <C.Option
-              onClick={() => setCurrentPage("Adicionar")}
-              isSelected={currentPage === "Adicionar" && true}
+              onClick={() => setCurrentPage("criarProdutos")}
+              isSelected={currentPage === "criarProdutos" && true}
             >
-              Adicionar
+              Criar Produto
             </C.Option>
             <C.Option
-              onClick={() => setCurrentPage("CreateCollection")}
-              isSelected={currentPage === "CreateCollection" && true}
+              onClick={() => setCurrentPage("criarCollection")}
+              isSelected={currentPage === "criarCollection" && true}
             >
               Criar Coleção
             </C.Option>
             <C.Option
-              onClick={() => setCurrentPage("Pedidos")}
-              isSelected={currentPage === "Pedidos" && true}
+              onClick={() => setCurrentPage("criarCategory")}
+              isSelected={currentPage === "criarCategory" && true}
             >
-              Pedidos
+              Criar Categoria
+            </C.Option>
+            <C.Option
+              onClick={() => setCurrentPage("pedidos")}
+              isSelected={currentPage === "pedidos" && true}
+            >
+              Gerenciar Pedidos
             </C.Option>
           </C.Options>
-          {currentPage === "Adicionar" && <Create />}
-          {currentPage === "Produtos" && <EditProducts />}
+          {currentPage === "produtos" && <EditProducts />}
+          {currentPage === "criarProdutos" && <Create />}
         </C.Header>
       </C.Container>
     </C.Section>

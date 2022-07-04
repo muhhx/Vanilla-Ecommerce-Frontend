@@ -11,6 +11,7 @@ import { AppDispatch } from "./app/store";
 import { selectAuth, verifySession } from "./features/authSlice";
 import { getUser } from "./features/userSlice";
 import { getProducts } from "./features/productsSlice";
+import { getCategories } from "./features/categorySlice";
 
 export default function App() {
   const { theme } = useTheme();
@@ -21,6 +22,7 @@ export default function App() {
   useEffect(() => {
     dispatch(verifySession());
     dispatch(getProducts());
+    dispatch(getCategories());
     //Dispatch: products, collections, categories
   }, []);
 

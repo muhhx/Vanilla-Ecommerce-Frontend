@@ -62,12 +62,13 @@ export default function Product() {
               </C.Divider>
 
               <C.Wrapper>
-                <C.Price discount={product.hasDiscount}>
-                  R$ {product.price}
-                </C.Price>
+                {!product.hasDiscount && <C.Price>R$ {product.price}</C.Price>}
 
                 {product.hasDiscount && (
-                  <C.Discount>R$ {product.discountPrice}</C.Discount>
+                  <>
+                    <C.PriceDiscount>R$ {product.price}</C.PriceDiscount>
+                    <C.Discount>R$ {product.discountPrice}</C.Discount>
+                  </>
                 )}
               </C.Wrapper>
 
@@ -78,6 +79,7 @@ export default function Product() {
                     <C.Option
                       key={key}
                       onClick={() => setCurrentSize(size)}
+                      // @ts-ignore
                       isSelected={currentSize === size}
                     >
                       {size}
