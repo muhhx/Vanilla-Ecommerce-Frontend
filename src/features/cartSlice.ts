@@ -50,24 +50,32 @@ const cartSlice = createSlice({
           state.cartItems[i].colorIndex === colorIndex &&
           state.cartItems[i].size === size
         ) {
-          state.cartItems[i].quantity -= 1;
-          state.cartQuantity -= 1;
-          state.cartAmout -= price;
-          return;
+          if (state.cartItems[i].quantity > 1) {
+            state.cartItems[i].quantity -= 1;
+            state.cartQuantity -= 1;
+            state.cartAmout -= price;
+            return;
+          }
         }
       }
     },
     removeFromCart: (state, action: PayloadAction<ICartPayload>) => {
-      const cartItem = state.cartItems.filter(
-        (item) => item.productId === action.payload.productId
-      )[0];
+      const { productId, colorIndex, size } = action.payload;
 
-      state.cartQuantity -= cartItem.quantity;
-      state.cartAmout -= cartItem.quantity * action.payload.price;
-
-      state.cartItems = state.cartItems.filter(
-        (item) => item.productId !== action.payload.productId
-      );
+      for (let i = 0; i < state.cartItems.length; i++) {
+        if (
+          state.cartItems[i].productId === productId &&
+          state.cartItems[i].colorIndex === colorIndex &&
+          state.cartItems[i].size === size
+        ) {
+          state.cartQuantity -= state.cartItems[i].quantity;
+          state.cartAmout -= state.cartItems[i].quantity * action.payload.price;
+          state.cartItems = state.cartItems.filter(
+            (item, index) => index !== i
+          );
+          return;
+        }
+      }
     },
   },
 });

@@ -1,6 +1,6 @@
 export interface ICartItem {
   productId: string;
-  colorIndex: number; //0, 1, etc, dependendo da cor que voce escolheu
+  colorIndex: number;
   size: string;
   quantity: number;
 }

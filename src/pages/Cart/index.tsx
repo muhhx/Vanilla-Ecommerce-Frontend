@@ -1,46 +1,41 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Spinner from "../../components/Spinner";
 import { selectCart } from "../../features/cartSlice";
-import { selectProducts } from "../../features/productsSlice";
-import { ICartItem } from "../../types/cart.types";
-import IProduct from "../../types/product.types";
+import useCheckout from "../../hooks/useCheckout";
+import Item from "./Item";
 import * as C from "./styles";
-
-interface IFilteredProduct {
-  product: IProduct;
-  cart: ICartItem;
-}
 
 export default function Cart() {
   const { cartItems, cartAmout, cartQuantity } = useSelector(selectCart);
-  //   const [filteredProducts, setFilteredProducts] = useState<IFilteredProduct[]>(
-  //     []
-  //   );
-  //   const { products } = useSelector(selectProducts);
-
-  //   useEffect(() => {
-  //     const filter = () => {
-  //       for (let i = 0; i < cartItems.length; i++) {
-  //         for (let j = 0; j < products.length; j++) {
-  //           if (cartItems[i].productId === products[j]._id) {
-  //             console.log(j, products[j]);
-  //           }
-  //         }
-  //       }
-  //     };
-  //     filter();
-  //   }, [cartItems, products]);
+  const [status, error, createCheckout] = useCheckout();
 
   return (
     <>
-      <span>{cartAmout}</span>
-      <span>{cartQuantity}</span>
-      {cartItems.length === 0 && <span>Você não possui itens no carrinho</span>}
+      <C.Section>
+        <C.Quantity>{cartQuantity}</C.Quantity>
+        <C.Container>
+          {cartItems.map((item, key) => (
+            <Item key={key} item={item} />
+          ))}
+        </C.Container>
+      </C.Section>
 
-      {cartItems.map((item, key) => (
-        <div key={key}>Item</div>
-      ))}
-      <button>Checkout</button>
+      <C.CheckoutSticky>
+        <C.CheckoutPanel>
+          {cartQuantity === 0 && (
+            <C.CheckoutSpan>Seu carrinho está vazio</C.CheckoutSpan>
+          )}
+
+          {cartQuantity > 0 && (
+            <C.CheckoutContainer>
+              <C.CheckoutSpan>Total: R${cartAmout}</C.CheckoutSpan>
+              <C.Checkout onClick={() => createCheckout(cartItems)}>
+                {status === "loading" ? <Spinner /> : "Finalizar compra"}
+              </C.Checkout>
+            </C.CheckoutContainer>
+          )}
+        </C.CheckoutPanel>
+      </C.CheckoutSticky>
     </>
   );
 }
