@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../app/store";
+import { addToCart } from "../../features/cartSlice";
 import useCreateFavorite from "../../hooks/useCreateFavorite";
 import useFetchProduct from "../../hooks/useFetchProduct";
 import IProduct from "../../types/product.types";
@@ -8,6 +11,7 @@ import * as C from "./styles";
 
 export default function Product() {
   const { id } = useParams();
+  const dispatch: AppDispatch = useDispatch();
   const [status, error, fetchProduct] = useFetchProduct();
   const [favStatus, favError, createFavorite] = useCreateFavorite();
 
@@ -29,7 +33,17 @@ export default function Product() {
     createFavorite(productId);
   };
 
-  const handleAddCart = () => {};
+  const handleAddCart = (productId: string, price: number) => {
+    if (!currentSize) return;
+    dispatch(
+      addToCart({
+        productId,
+        colorIndex: currentOption,
+        price,
+        size: currentSize,
+      })
+    );
+  };
 
   return (
     <C.Section>
@@ -108,7 +122,9 @@ export default function Product() {
                   )}
 
                   {!product.isSoldOut && (
-                    <C.Button onClick={handleAddCart}>
+                    <C.Button
+                      onClick={() => handleAddCart(product._id, product.price)}
+                    >
                       Adicionar ao carrinho
                     </C.Button>
                   )}

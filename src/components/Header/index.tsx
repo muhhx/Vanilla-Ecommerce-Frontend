@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCart } from "../../features/cartSlice";
 import useTheme from "../../contexts/ThemeProvider/useTheme";
 import useMenu from "../../contexts/MenuProvider/useMenu";
 
@@ -9,6 +11,7 @@ import themeLight from "../../assets/icon_light_theme.png";
 import * as C from "./styles";
 
 export default function Header() {
+  const { cartAmout } = useSelector(selectCart);
   const { theme, handleChangeTheme } = useTheme();
   const { isMenuOpen, handleOpenMenu, handleCloseMenu } = useMenu();
 
@@ -44,7 +47,7 @@ export default function Header() {
           </C.Button>
 
           <Link to="/cart">
-            <C.Span>CART 200.00</C.Span>
+            <C.Span>CART {cartAmout}</C.Span>
           </Link>
         </C.Wrapper>
       </C.Container>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Spinner from "../../components/Spinner";
 import { selectUser } from "../../features/userSlice";
 import useLogout from "../../hooks/useLogout";
 import Favorites from "./Favorites";
@@ -16,9 +17,13 @@ export default function User() {
     <C.Section>
       <C.Container>
         <C.Header>
-          <C.Title>{name}</C.Title>
-          <span>{email}</span>
-          <button onClick={() => handleLogout()}>Logout</button>
+          <C.Wrapper>
+            <C.Title>{name}</C.Title>
+            <C.Span>{email}</C.Span>
+            <C.Button onClick={() => handleLogout()}>
+              {LogoutStatus === "loading" ? <Spinner /> : "Logout"}
+            </C.Button>
+          </C.Wrapper>
           <C.Options>
             <C.Option
               onClick={() => setCurrentPage("favs")}
