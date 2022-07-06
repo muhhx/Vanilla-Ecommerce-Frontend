@@ -26,6 +26,7 @@ const cartSlice = createSlice({
           state.cartItems[i].quantity += 1;
           state.cartQuantity += 1;
           state.cartAmout += price;
+          localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
           return;
         }
       }
@@ -39,6 +40,7 @@ const cartSlice = createSlice({
         });
         state.cartQuantity += 1;
         state.cartAmout += price;
+        localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       }
     },
     subtractFromCart: (state, action: PayloadAction<ICartPayload>) => {
@@ -54,6 +56,7 @@ const cartSlice = createSlice({
             state.cartItems[i].quantity -= 1;
             state.cartQuantity -= 1;
             state.cartAmout -= price;
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
             return;
           }
         }
@@ -73,6 +76,7 @@ const cartSlice = createSlice({
           state.cartItems = state.cartItems.filter(
             (item, index) => index !== i
           );
+          localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
           return;
         }
       }

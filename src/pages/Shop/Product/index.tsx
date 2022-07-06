@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import IProduct from "../../../types/product.types";
+import { sliceString } from "../../../utils/formatter";
 import * as C from "./styles";
 
 export default function Product({ product }: { product: IProduct }) {
@@ -18,11 +19,13 @@ export default function Product({ product }: { product: IProduct }) {
 
           <C.PriceWrapper>
             <C.Price hasDiscount={product.hasDiscount}>
-              R$ {product.price}
+              R$ {sliceString(product.price)}
             </C.Price>
 
             {product.hasDiscount && (
-              <C.PriceDiscount>R$ {product.discountPrice}</C.PriceDiscount>
+              <C.PriceDiscount>
+                R$ {sliceString(product.discountPrice)}
+              </C.PriceDiscount>
             )}
           </C.PriceWrapper>
         </C.DescriptionWrapper>

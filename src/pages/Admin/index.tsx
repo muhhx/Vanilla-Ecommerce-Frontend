@@ -6,11 +6,7 @@ import * as C from "./styles";
 
 export default function Admin() {
   const [currentPage, setCurrentPage] = useState<
-    | "produtos"
-    | "criarProdutos"
-    | "criarCollection"
-    | "criarCategory"
-    | "pedidos"
+    "produtos" | "criarProdutos" | "criarCollection" | "criarCategory"
   >("produtos");
 
   return (
@@ -42,12 +38,6 @@ export default function Admin() {
               isSelected={currentPage === "criarCategory" && true}
             >
               Criar Categoria
-            </C.Option>
-            <C.Option
-              onClick={() => setCurrentPage("pedidos")}
-              isSelected={currentPage === "pedidos" && true}
-            >
-              Gerenciar Pedidos
             </C.Option>
           </C.Options>
           {currentPage === "produtos" && <EditProducts />}

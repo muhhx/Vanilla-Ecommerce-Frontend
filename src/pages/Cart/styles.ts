@@ -81,3 +81,11 @@ export const Checkout = styled.button`
     border-color: ${({ theme }) => theme.color.fontOrange};
   }
 `;
+
+export const Error = styled.p`
+  color: ${({ theme }) => theme.color.fontOrange};
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-bottom: 50px;
+`;

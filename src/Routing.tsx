@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
+import Payment from "./pages/Payment";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import User from "./pages/User";
@@ -30,6 +31,7 @@ export default function Routing() {
 
           <Route element={<AuthLayout />}>
             <Route path="/user" element={<User />} />
+            <Route path="/success" element={<Payment />} />
 
             <Route element={<AdminLayout />}>
               <Route path="/admin" element={<Admin />} />

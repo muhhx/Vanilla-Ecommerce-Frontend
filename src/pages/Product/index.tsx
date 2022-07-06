@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../app/store";
 import { addToCart } from "../../features/cartSlice";
+import { sliceString } from "../../utils/formatter";
 import useCreateFavorite from "../../hooks/useCreateFavorite";
 import useFetchProduct from "../../hooks/useFetchProduct";
 import IProduct from "../../types/product.types";
@@ -76,12 +77,18 @@ export default function Product() {
               </C.Divider>
 
               <C.Wrapper>
-                {!product.hasDiscount && <C.Price>R$ {product.price}</C.Price>}
+                {!product.hasDiscount && (
+                  <C.Price>R$ {sliceString(product.price)}</C.Price>
+                )}
 
                 {product.hasDiscount && (
                   <>
-                    <C.PriceDiscount>R$ {product.price}</C.PriceDiscount>
-                    <C.Discount>R$ {product.discountPrice}</C.Discount>
+                    <C.PriceDiscount>
+                      R$ {sliceString(product.price)}
+                    </C.PriceDiscount>
+                    <C.Discount>
+                      R$ {sliceString(product.discountPrice)}
+                    </C.Discount>
                   </>
                 )}
               </C.Wrapper>
@@ -123,7 +130,14 @@ export default function Product() {
 
                   {!product.isSoldOut && (
                     <C.Button
-                      onClick={() => handleAddCart(product._id, product.price)}
+                      onClick={() =>
+                        handleAddCart(
+                          product._id,
+                          product.hasDiscount
+                            ? product.discountPrice
+                            : product.price
+                        )
+                      }
                     >
                       Adicionar ao carrinho
                     </C.Button>

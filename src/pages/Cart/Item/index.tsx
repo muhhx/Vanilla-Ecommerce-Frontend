@@ -10,6 +10,7 @@ import Spinner from "../../../components/Spinner";
 import { selectProducts } from "../../../features/productsSlice";
 import { ICartItem } from "../../../types/cart.types";
 import IProduct from "../../../types/product.types";
+import { sliceString } from "../../../utils/formatter";
 import * as C from "./styles";
 
 export default function Item({ item }: { item: ICartItem }) {
@@ -109,7 +110,12 @@ export default function Item({ item }: { item: ICartItem }) {
                 </C.Button>
               </C.Operations>
 
-              <C.Price>R$ {productData.price}</C.Price>
+              <C.Price>
+                R${" "}
+                {productData.hasDiscount
+                  ? sliceString(productData.discountPrice)
+                  : sliceString(productData.price)}
+              </C.Price>
             </C.FunctionalInformation>
           </C.Information>
         </C.Wrapper>

@@ -27,11 +27,15 @@ export default function useCheckout() {
         return setStatus("failure");
       }
 
-      //   const url =
-      await paymentServices.getCheckoutUrl(cartItems);
+      const { data } = await paymentServices.getCheckoutUrl(cartItems);
+
+      if (!data.url) {
+        setError("Algo deu errado ao fazer o checkout.");
+        return setStatus("failure");
+      }
 
       setStatus("success");
-      //   window.location.replace(url);
+      window.location.replace(data.url);
     } catch (error: any) {
       if (error.response.data) {
         setError(error.response.data);

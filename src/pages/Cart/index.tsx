@@ -3,6 +3,7 @@ import Spinner from "../../components/Spinner";
 import { selectCart } from "../../features/cartSlice";
 import useCheckout from "../../hooks/useCheckout";
 import Item from "./Item";
+import { sliceString } from "../../utils/formatter";
 import * as C from "./styles";
 
 export default function Cart() {
@@ -13,6 +14,7 @@ export default function Cart() {
     <>
       <C.Section>
         <C.Quantity>{cartQuantity}</C.Quantity>
+        {status === "failure" && <C.Error>{error}</C.Error>}
         <C.Container>
           {cartItems.map((item, key) => (
             <Item key={key} item={item} />
@@ -28,7 +30,7 @@ export default function Cart() {
 
           {cartQuantity > 0 && (
             <C.CheckoutContainer>
-              <C.CheckoutSpan>Total: R${cartAmout}</C.CheckoutSpan>
+              <C.CheckoutSpan>Total: R${sliceString(cartAmout)}</C.CheckoutSpan>
               <C.Checkout onClick={() => createCheckout(cartItems)}>
                 {status === "loading" ? <Spinner /> : "Finalizar compra"}
               </C.Checkout>

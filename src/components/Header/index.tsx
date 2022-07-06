@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { selectCart } from "../../features/cartSlice";
 import useTheme from "../../contexts/ThemeProvider/useTheme";
 import useMenu from "../../contexts/MenuProvider/useMenu";
+import { sliceString } from "../../utils/formatter";
 
 import userDark from "../../assets/icon_dark_user.png";
 import userLight from "../../assets/icon_light_user.png";
@@ -47,7 +48,7 @@ export default function Header() {
           </C.Button>
 
           <Link to="/cart">
-            <C.Span>CART {cartAmout}</C.Span>
+            <C.Span>CART {sliceString(cartAmout)}</C.Span>
           </Link>
         </C.Wrapper>
       </C.Container>
