@@ -36,18 +36,6 @@ export const GlobalStyle = createGlobalStyle`
           props.isMenuOpen === true ? "hidden" : "initial"}
     }
 
-    /* ::-webkit-scrollbar {
-        height: 8px;
-        width: 0px;
-    }
-    
-    ::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background-color: orange;
-    } */
     input[type=range] {
         -webkit-appearance: none;
         background-color: ${(props: Props) => props.bgColor};

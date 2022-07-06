@@ -16,7 +16,7 @@ import * as C from "./styles";
 export default function Item({ item }: { item: ICartItem }) {
   const dispatch: AppDispatch = useDispatch();
   const [productData, setProductData] = useState<IProduct>();
-  const { products } = useSelector(selectProducts); //sera q n tem como selecionar o produto especifico no redux?
+  const { products } = useSelector(selectProducts);
 
   useEffect(() => {
     setProductData(

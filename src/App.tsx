@@ -29,11 +29,6 @@ export default function App() {
     if (userId) {
       dispatch(getUser({ userId }));
     }
-    //Dispatch: userData, userPayments, userFavorites, userAdresses, userPedidos
-    //Dispatch esses estados no useLogin (antes de ser redirecionado) e aqui (quando o usuario ja tem sessao aberta)- dispatch ação para resetar esses estados no logout
-    //Criar useRefresh hook, onde caso de errado (expirou sessão, reseta estados e estado auth)
-
-    //userSlice (TODOS OS DADOS RELACIONADOS AO USUARIO Q ESTA AUTENTICADO): thunk to fetch all data at once - add fav reducer, add endereço reducer, etc
   }, [userId]);
 
   return (

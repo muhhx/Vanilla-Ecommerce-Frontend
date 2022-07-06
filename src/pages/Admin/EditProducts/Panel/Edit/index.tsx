@@ -185,10 +185,3 @@ export default function Edit({ product }: { product: IProduct }) {
     </C.Container>
   );
 }
-
-//Name, description
-//price, discountPrice (calculate discount percentage)
-//display, isSoldOut, isNewProduct
-//thumb
-//gender (between men/women), categoryId, collectionId
-//SALVAR ALTERAÇÕES, DELETAR PRODUTO
