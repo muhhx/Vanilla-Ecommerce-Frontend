@@ -64,3 +64,12 @@ export const Products = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
+
+export const Span = styled.span`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.color.fontMain};
+`;

@@ -19,17 +19,19 @@ export default function Filter({
   return (
     <C.Row>
       <C.FilterName>{name}</C.FilterName>
-      {options.map((option, key) => (
-        <C.Option
-          key={key}
-          onClick={() =>
-            setFilterState(filterState === option._id ? null : option._id)
-          }
-          isClicked={filterState === option._id}
-        >
-          {option.name}
-        </C.Option>
-      ))}
+      <C.OptionContainer>
+        {options.map((option, key) => (
+          <C.Option
+            key={key}
+            onClick={() =>
+              setFilterState(filterState === option._id ? null : option._id)
+            }
+            isClicked={filterState === option._id}
+          >
+            {option.name}
+          </C.Option>
+        ))}
+      </C.OptionContainer>
     </C.Row>
   );
 }

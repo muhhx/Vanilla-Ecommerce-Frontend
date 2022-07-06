@@ -23,7 +23,6 @@ export default function App() {
     dispatch(verifySession());
     dispatch(getProducts());
     dispatch(getCategories());
-    //Dispatch: products, collections, categories
   }, []);
 
   useEffect(() => {

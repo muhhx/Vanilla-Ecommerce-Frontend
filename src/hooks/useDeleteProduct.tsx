@@ -17,7 +17,7 @@ export default function useDeleteProduct() {
       setStatus("loading");
       setError("");
 
-      const response = await productServices.deleteProduct(productId);
+      await productServices.deleteProduct(productId);
 
       dispatch(removeProduct(productId));
       setStatus("success");

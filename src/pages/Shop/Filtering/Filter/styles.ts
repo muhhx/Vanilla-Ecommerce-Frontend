@@ -5,9 +5,11 @@ interface IProps {
 }
 
 export const Row = styled.div`
+  width: 100%;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 5px;
 `;
 
 export const FilterName = styled.span`
@@ -16,6 +18,18 @@ export const FilterName = styled.span`
   font-weight: 500;
   font-family: "Jost", sans-serif;
   text-transform: uppercase;
+`;
+
+export const OptionContainer = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding-left: 55px;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: 400px) {
+    padding-left: 0px;
+  }
 `;
 
 export const Option = styled.button`

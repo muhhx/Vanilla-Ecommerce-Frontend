@@ -60,17 +60,31 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
+  gap: 25px;
 `;
 
 export const Clear = styled.button`
-  background-color: transparent;
-  border: none;
-  color: ${({ theme }) => theme.color.fontMain};
-  font-size: 12px;
-  font-weight: 500;
+  padding: 7px 20px;
+  width: 100%;
   font-family: "Jost", sans-serif;
-  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  background-color: ${({ theme }) => theme.color.reverseColor};
   cursor: pointer;
-  margin-top: 20px;
+  transition: 0.2s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+
+  &:disabled {
+    background-color: gray;
+    cursor: initial;
+  }
+
+  &:enabled:hover {
+    background-color: ${({ theme }) => theme.color.reverseHover};
+  }
 `;

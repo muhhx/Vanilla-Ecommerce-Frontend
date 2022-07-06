@@ -79,8 +79,8 @@ export const NewWrapper = styled.div`
 export const SoldWrapper = styled.div`
   display: flex;
   justify-content: center;
-  background-color: ${({ theme }) => theme.color.backgroundMain};
-  color: ${({ theme }) => theme.color.reverseColor};
+  background-color: ${({ theme }) => theme.color.reverseColor};
+  color: white;
   padding: 0px 8px;
   position: absolute;
   bottom: 5px;

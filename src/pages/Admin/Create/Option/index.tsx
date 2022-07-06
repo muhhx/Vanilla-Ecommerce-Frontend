@@ -99,7 +99,7 @@ export default function Option({ option, handleUpdateOption }: IProps) {
       ))}
 
       {status === "idle" || status === "failure" ? (
-        <input
+        <C.ImageInput
           type="file"
           accept="image/*"
           id="image-uploader"

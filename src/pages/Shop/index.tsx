@@ -26,16 +26,23 @@ export default function Shop() {
             setFilteredProducts={setFilteredProducts}
           />
         </C.Header>
+
         {status === "pending" && <Spinner />}
 
         {status === "rejected" && <C.Error>{error}</C.Error>}
 
         {status === "success" && (
-          <C.Products>
-            {filteredProducts.map((product) => (
-              <Product key={product._id} product={product} />
-            ))}
-          </C.Products>
+          <>
+            {filteredProducts.length === 0 && (
+              <C.Span>Nenhum produto encontrado</C.Span>
+            )}
+
+            <C.Products>
+              {filteredProducts.map((product) => (
+                <Product key={product._id} product={product} />
+              ))}
+            </C.Products>
+          </>
         )}
       </C.Container>
     </C.Section>

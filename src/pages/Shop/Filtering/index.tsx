@@ -19,11 +19,6 @@ export default function Filtering({ products, setFilteredProducts }: IProps) {
   const [collectionFilter, setCollectionFilter] = useState<string | null>(null);
   const [conditionFilter, setConditionFilter] = useState<string | null>(null);
 
-  //Criar um objeto contendo todas as opções de filtragem. Quando o usuário clica em uma opção:
-  //1. se ja houver uma opção && essa opção for === a opção selecionada pelo usuario, setar essa opção específica para uma empty string;
-  //2. senao, setar essa opçaõ pela opção selecionada pelo usuario
-  //Com isso, vou ter um objeto sempre atualizado com todas as propriedades de filtragem
-
   const genders = ["all", "men", "women"];
   const collections = [
     { name: "AW21", _id: "23423423423" },
@@ -126,7 +121,7 @@ export default function Filtering({ products, setFilteredProducts }: IProps) {
             setFilterState={setConditionFilter}
             options={conditions}
           />
-          <C.Clear onClick={clearFilters}>Clear</C.Clear>
+          <C.Clear onClick={clearFilters}>Clear Filters</C.Clear>
         </C.Container>
       )}
     </>
