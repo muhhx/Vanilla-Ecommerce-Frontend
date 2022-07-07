@@ -12,7 +12,11 @@ export default function Shop() {
   const [filteredProducts, setFilteredProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    setFilteredProducts(products.filter((product) => product.display === true));
+    if (products) {
+      setFilteredProducts(
+        products.filter((product) => product.display === true)
+      );
+    }
   }, [products]);
 
   return (
