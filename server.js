@@ -1,5 +1,7 @@
-const app = require("express");
+const express = require("express");
 const { resove } = require("path")
+
+const app = express()
 
 app.use("/", express.static(
     resolve(__dirname, "./dist"),
