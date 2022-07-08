@@ -15,21 +15,16 @@
 
 ## Sobre
 
-<p>Para acessar o <strong>Website</strong>, clique aqui: <a href="https://cenolab.com.br/">cenolab.com.br</a></p>
-<p>Para acessar o repositório <strong>Backend</strong>, clique aqui: <a href="https://github.com/muhhx/Cenolab-Backend">Cenolab API</a></p>
-<p>Para acessar o repositório <strong>Frontend</strong>, clique aqui: <a href="https://github.com/muhhx/Cenolab-Frontend">Cenolab Client</a></p>
+<p>Para acessar o <strong>Website</strong>, clique aqui: <a href="https://vanilla-ecommerce-frontend.herokuapp.com/">https://vanilla-ecommerce-frontend.herokuapp.com/</a></p>
+<p>Para acessar o repositório <strong>Backend</strong>, clique aqui: <a href="https://github.com/muhhx/Vanilla-Ecommerce-Backend">Vanilla Ecommerce API</a></p>
 
-<p>Site institucional para empresa de arquitetura/cenografia, usando Typescript, React.js, Node.js, MongoDB e Firebase. Página de administrador com autenticação e UI intuitiva para editar o portfólio.</p>
+<p>Ecommerce com diversas funcionalidades. Autenticação de usuário feito com JWT e sessões no backend. Método de pagamento feito com a API do Stripe. Storage feito com AWS s3.</p>
 
 ## Preview
 
 ## Funcionalidades
 
-- [x] JWT Auth with Node.js
-- [x] CRUD Operations (ADD, DELETE, EDIT PROJECTS) in the admin page
-- [x] Firebase Storage to store Images
-- [x] All pages responsive, including the admin page
-- [x] Email form functionality with NodeMailer
+- [x] Autenticação
 
 ## Tecnologias
 
@@ -39,9 +34,13 @@
 - Styled-components
 - React Hooks
 - Context API
-- React Router Dom v6.
-- Firebase
+- Redux-Toolkit
+- Redux-Thunk
+- AWS (s3)
 - Node.js
+- Express
+- JWT
+- Stripe
 - MongoDB
 
 ## Instalar
@@ -54,7 +53,7 @@
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/muhhx/Cenolab-Responsive-Website>
+$ git clone <https://github.com/muhhx/Vanilla-Ecommerce-Website>
 
 # Acesse a pasta do projeto no terminal/cd
 $ cd Cenolab-Responsive-Website
