@@ -1,12 +1,14 @@
 import { useState } from "react";
+
 import Create from "./Create";
 import EditProducts from "./EditProducts";
 import Category from "./Category";
+import Collection from "./Collection";
 import * as C from "./styles";
 
 export default function Admin() {
   const [currentPage, setCurrentPage] = useState<
-    "produtos" | "criarProdutos" | "criarCategory"
+    "produtos" | "criarProdutos" | "criarCategory" | "criarCollection"
   >("produtos");
 
   return (
@@ -33,10 +35,17 @@ export default function Admin() {
             >
               Criar Categoria
             </C.Option>
+            <C.Option
+              onClick={() => setCurrentPage("criarCollection")}
+              isSelected={currentPage === "criarCollection" && true}
+            >
+              Criar Coleção
+            </C.Option>
           </C.Options>
           {currentPage === "produtos" && <EditProducts />}
           {currentPage === "criarProdutos" && <Create />}
           {currentPage === "criarCategory" && <Category />}
+          {currentPage === "criarCollection" && <Collection />}
         </C.Header>
       </C.Container>
     </C.Section>

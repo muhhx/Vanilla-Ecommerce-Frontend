@@ -18,7 +18,7 @@ export default function Category() {
   };
 
   return (
-    <>
+    <C.Container>
       {status === "pending" && <Spinner />}
 
       {status === "rejected" && <span>{error}</span>}
@@ -49,6 +49,6 @@ export default function Category() {
           </C.Divider>
         </>
       )}
-    </>
+    </C.Container>
   );
 }

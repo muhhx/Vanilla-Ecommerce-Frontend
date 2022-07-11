@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 50px;
+`;
+
 export const Divider = styled.div`
   width: 100%;
   display: flex;
