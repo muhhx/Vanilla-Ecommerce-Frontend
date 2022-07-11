@@ -1,23 +1,33 @@
+import { useSelector } from "react-redux";
+import { selectCollections } from "../../features/collectionSlice";
 import { Link } from "react-router-dom";
 import * as C from "./styles";
 
 export default function Menu() {
+  const { collections } = useSelector(selectCollections);
+
   return (
     <C.Sticky>
       <C.Section>
         <C.Container>
           <C.Navigation>
             <Link to={"/shop"}>
-              <C.Button>SHOP</C.Button>
+              <C.Button>SHOP ALL</C.Button>
             </Link>
-            <C.Button>COLLECTIONS</C.Button>
-            <C.Button>EXCLUSIVE</C.Button>
-            <C.Button>VANILLA WORLD</C.Button>
+            {collections.map((collection) => (
+              <Link to={`/collection/${collection.season}`}>
+                <C.Button>{collection.season.toUpperCase()} COL.</C.Button>
+              </Link>
+            ))}
           </C.Navigation>
           <C.Footer>
-            <C.Span>Termos</C.Span>
-            <C.Span>Instagram</C.Span>
-            <C.Span>Contato</C.Span>
+            <C.Span href="https://www.linkedin.com/in/muhhx/" target="_blank">
+              LinkedIn
+            </C.Span>
+            <C.Span>created by Murilo Santos</C.Span>
+            <C.Span href="https://github.com/muhhx" target="_blank">
+              GitHub
+            </C.Span>
           </C.Footer>
         </C.Container>
       </C.Section>

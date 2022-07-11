@@ -16,6 +16,8 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+
   @media only screen and (max-width: 700px) {
     width: 100%;
   }
@@ -91,6 +93,7 @@ export const Title = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 5%;
+
   @media only screen and (max-width: 900px) {
     height: 95%;
     flex-direction: column;
@@ -143,4 +146,11 @@ export const Span = styled.span`
   @media only screen and (max-width: 900px) {
     display: none;
   }
+`;
+
+export const Error = styled.p`
+  width: 100%;
+  color: ${({ theme }) => theme.color.fontOrange};
+  text-align: center;
+  font-size: 1.2rem;
 `;

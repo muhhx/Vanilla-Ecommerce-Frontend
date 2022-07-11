@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { selectCategories } from "../../../features/categorySlice";
+import { selectCollections } from "../../../features/collectionSlice";
+import { useSelector } from "react-redux";
 import IProduct from "../../../types/product.types";
+
 import Filter from "./Filter";
 import * as C from "./styles";
 
@@ -12,6 +14,14 @@ interface IProps {
 
 export default function Filtering({ products, setFilteredProducts }: IProps) {
   const { categories } = useSelector(selectCategories);
+  const collectionState = useSelector(selectCollections);
+
+  const collections = collectionState.collections.map((collection) => {
+    return {
+      name: collection.season,
+      _id: collection._id,
+    };
+  });
 
   const [filterOpen, setFilterOpen] = useState(false);
   const [genderFilter, setGenderFilter] = useState("all");
@@ -20,12 +30,6 @@ export default function Filtering({ products, setFilteredProducts }: IProps) {
   const [conditionFilter, setConditionFilter] = useState<string | null>(null);
 
   const genders = ["all", "men", "women"];
-  const collections = [
-    { name: "AW21", _id: "23423423423" },
-    { name: "SS21", _id: "123123123" },
-    { name: "AW22", _id: "2324rsfe" },
-    { name: "SS22", _id: "er23r23r23" },
-  ];
   const conditions = [
     { name: "Novidade", _id: "new" },
     { name: "Esgotado", _id: "soldOut" },

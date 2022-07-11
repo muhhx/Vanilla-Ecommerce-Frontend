@@ -15,7 +15,6 @@ export const Section = styled.section`
   top: 0;
   display: flex;
   justify-content: center;
-  /* background-color: rgba(228, 219, 217, .8); */
   background-color: ${({ theme }) =>
     theme.color.backgroundMain === "#F5F1EC"
       ? "rgba(228, 219, 217, .8)"
@@ -25,7 +24,7 @@ export const Section = styled.section`
 
 export const Container = styled.div`
   width: 90%;
-  max-width: 400px;
+  max-width: 600px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -70,9 +69,13 @@ export const Button = styled.button`
   }
 `;
 
-export const Span = styled.span`
+export const Span = styled.a`
   color: ${({ theme }) => theme.color.fontMain};
   cursor: pointer;
   font-weight: 500;
   text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

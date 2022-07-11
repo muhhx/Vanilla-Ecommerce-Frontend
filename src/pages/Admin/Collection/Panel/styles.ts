@@ -78,6 +78,8 @@ export const Title = styled.h1`
 export const Description = styled.p`
   color: ${({ theme }) => theme.color.fontMain};
   text-align: start;
+  max-height: 30px;
+  overflow: hidden;
 `;
 
 export const Actions = styled.div`

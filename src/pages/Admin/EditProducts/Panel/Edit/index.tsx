@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectCategories } from "../../../../../features/categorySlice";
+import { selectCollections } from "../../../../../features/collectionSlice";
 
 import useDeleteProduct from "../../../../../hooks/useDeleteProduct";
 import useUpdateProduct from "../../../../../hooks/useUpdateProduct";
@@ -13,6 +14,14 @@ import * as C from "./styles";
 
 export default function Edit({ product }: { product: IProduct }) {
   const { categories } = useSelector(selectCategories);
+  const collectionState = useSelector(selectCollections);
+
+  const collections = collectionState.collections.map((collection) => {
+    return {
+      name: collection.season,
+      _id: collection._id,
+    };
+  });
 
   const [deleteStatus, deleteError, deleteProduct] = useDeleteProduct();
   const [updateStatus, updateError, updateProduct] = useUpdateProduct();
@@ -32,13 +41,6 @@ export default function Edit({ product }: { product: IProduct }) {
   const [categoryId, setCategoryId] = useState(product.categoryId);
   const [collectionId, setCollectionId] = useState(product.collectionId);
   const [thumb, setThumb] = useState(product.thumb);
-
-  const collections = [
-    { name: "AW21", _id: "23423423423" },
-    { name: "SS21", _id: "123123123" },
-    { name: "AW22", _id: "2324rsfe" },
-    { name: "SS22", _id: "er23r23r23" },
-  ];
 
   const genders = [
     { name: "Men", _id: "men" },
@@ -104,7 +106,7 @@ export default function Edit({ product }: { product: IProduct }) {
       <C.Wrapper>
         <Input
           inputType="number"
-          label="Novo preço"
+          label="Novo preço (in cents)"
           state={price}
           setState={setPrice}
           validState={true}
@@ -112,7 +114,7 @@ export default function Edit({ product }: { product: IProduct }) {
         {hasDiscount && (
           <Input
             inputType="number"
-            label="Novo Desconto"
+            label="Novo Desconto (in cents)"
             state={discountPrice}
             setState={setDiscountPrice}
             validState={true}

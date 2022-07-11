@@ -17,7 +17,7 @@ export default function User() {
       <C.Container>
         <C.Header>
           <C.Wrapper>
-            <C.Title>{name}</C.Title>
+            <C.Title>Perfil</C.Title>
             <C.Span>{email}</C.Span>
             <C.Button onClick={() => handleLogout()}>
               {LogoutStatus === "loading" ? <Spinner /> : "Logout"}

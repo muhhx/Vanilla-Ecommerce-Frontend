@@ -39,7 +39,7 @@ export default function Admin() {
               onClick={() => setCurrentPage("criarCollection")}
               isSelected={currentPage === "criarCollection" && true}
             >
-              Criar Coleção
+              Gerenciar Coleções
             </C.Option>
           </C.Options>
           {currentPage === "produtos" && <EditProducts />}

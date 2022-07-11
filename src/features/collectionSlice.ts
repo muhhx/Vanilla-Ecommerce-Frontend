@@ -36,6 +36,12 @@ const collectionSlice = createSlice({
     },
     putCollection: (state, action: PayloadAction<ICollection>) => {
       for (let i = 0; i < state.collections.length; i++) {
+        if (state.collections[i].homePage === true) {
+          state.collections[i].homePage = false;
+        }
+      }
+
+      for (let i = 0; i < state.collections.length; i++) {
         if (state.collections[i]._id === action.payload._id) {
           state.collections[i] = action.payload;
         }

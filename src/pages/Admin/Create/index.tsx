@@ -1,16 +1,26 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { selectCollections } from "../../../features/collectionSlice";
 import { selectCategories } from "../../../features/categorySlice";
-import useCreateProduct from "../../../hooks/useCreateProduct";
 import { IOption, IImage } from "../../../types/product.types";
+import useCreateProduct from "../../../hooks/useCreateProduct";
+
+import Spinner from "../../../components/Spinner";
 import Select from "../../../components/Select";
 import Input from "../../../components/Input";
 import Option from "./Option";
-import Spinner from "../../../components/Spinner";
 import * as C from "./styles";
 
 export default function Create() {
   const { categories } = useSelector(selectCategories);
+  const { collections } = useSelector(selectCollections);
+
+  const collectionsFinal = collections.map((collection) => {
+    return {
+      name: collection.season,
+      _id: collection._id,
+    };
+  });
   const [status, error, createProduct] = useCreateProduct();
 
   const [name, setName] = useState("");
@@ -31,12 +41,6 @@ export default function Create() {
     },
   ]);
 
-  const collections = [
-    { name: "AW21", _id: "23423423423" },
-    { name: "SS21", _id: "123123123" },
-    { name: "AW22", _id: "2324rsfe" },
-    { name: "SS22", _id: "er23r23r23" },
-  ];
   const genders = [
     { name: "Men", _id: "men" },
     { name: "Women", _id: "women" },
@@ -128,7 +132,7 @@ export default function Create() {
             />
 
             <Input
-              label="Price"
+              label="Price (in cents)"
               inputType="number"
               state={price}
               setState={setPrice}
@@ -144,7 +148,7 @@ export default function Create() {
               />
               <Select
                 label="Coleção"
-                values={collections}
+                values={collectionsFinal}
                 setState={setCollectionId}
               />
             </C.SelectWrapper>

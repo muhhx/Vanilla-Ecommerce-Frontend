@@ -7,6 +7,7 @@ import AdminLayout from "./components/AdminLayout";
 
 //Pages
 import Home from "./pages/Home";
+import Collection from "./pages/Collection";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
@@ -23,6 +24,7 @@ export default function Routing() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/collection/:id" element={<Collection />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
