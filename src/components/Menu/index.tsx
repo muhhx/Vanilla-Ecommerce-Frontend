@@ -15,8 +15,11 @@ export default function Menu() {
               <C.Button>SHOP ALL</C.Button>
             </Link>
             {collections.map((collection) => (
-              <Link to={`/collection/${collection.season}`}>
-                <C.Button>{collection.season.toUpperCase()} COL.</C.Button>
+              <Link
+                key={collection._id}
+                to={`/collection/${collection.season}`}
+              >
+                <C.Button>{collection.season.toUpperCase()} Coll.</C.Button>
               </Link>
             ))}
           </C.Navigation>

@@ -1,8 +1,7 @@
 const config = {
   passwordRegex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/,
   emailRegex: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
-  // baseUrl: "https://vanilla-ecommerce-backend.herokuapp.com/",
-  baseUrl: "http://localhost:4000",
+  baseUrl: import.meta.env.VITE_APP_API_URL || "http://localhost:4000",
 };
 
 export default config;
