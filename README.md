@@ -16,12 +16,11 @@
 ## About this Project
 The idea of the app was to build a fully functional clothing e-commerce app, with authentication, payment methods, and as much functionalities I could think of.
 
-This project is part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
-
 - Live website: <https://vanillaec.herokuapp.com/>
 - Server API repository: <https://github.com/muhhx/Vanilla-Ecommerce-Backend/> 
 
 ## Some observations
+- This project is part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
 - I started this app some months ago, so there are some things that I did back then that I could have done better, such as using Typescript generics with Axios, to type the API response. Regardless, the app is working the same way 😊.
 
 ## Preview
@@ -89,6 +88,7 @@ You can check all of the screens, as well as a website walkthrough, by clicking 
 - [Stripe](React) | Payment services
 - [JWT Tokens](React) | Accesss and Refresh tokens for Auth, stored in httpOnly Cookie
 </br>
+
 - ***Note:** more tools and technologies were used in the server API for this application, where you can check it [here](https://github.com/muhhx/Vanilla-Ecommerce-Backend)*
 
 
