@@ -19,6 +19,7 @@ I've also put a lot of time and effort into the admin page, creating an intuitiv
   
 
 Let's connect on LinkedIn: <https://www.linkedin.com/in/muhhx/>
+
 Send me an email: muriloue@gmail.com
 
 ## Built with (client)
