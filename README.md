@@ -14,17 +14,37 @@
 </p>
 
 ## About this Project
-The idea of the app was to build a fully functional clothing e-commerce app, with authentication, payment methods, and as much functionalities I could think of.
+The idea of the app was to build a place to share and curate my clothing interests from differents brands and collections, so I came to the conclusion that there was no better way than creating a fully functional ecommerce so I could show them off 😅.
+The App includes Authentication, Payment methods, Theme switcher, and a variety of other functionalities that enhance the user experience, integrating it to third-party services like AWS and Stripe.
+I also put a lot of time and efford on the admin page, creating a intuitive and easy administration panel to manage our products, categories, collections, and the whole website tbh.
 
 - Live website: <https://vanillaec.herokuapp.com/>
 - Server API repository: <https://github.com/muhhx/Vanilla-Ecommerce-Backend/> 
 
 ## Some observations
 - This project is part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
-- I started this app some months ago, so there are some things that I did back then that I could have done better, such as using Typescript generics with Axios, to type the API response. Regardless, the app is working the same way 😊.
+- I started this app some months ago, so there are some things that I did back then that I could have done better, such as using Typescript generics with Axios, to type the API response. Regardless, the app is working the same way.
 
 ## Preview
 You can check all of the screens, as well as a website walkthrough, by clicking [here](linktosomething)
+
+## Built with (client)
+- [Typescript](TypeScript) | More transparency and control over the code
+- [React](React) | React functional components
+- [React-Router-Dom v6](React) | Router
+- [React Context API](React) | Manage simple states
+- [React-Loader-Spinner](React) | Simple library for the UI Spinner component
+- [Redux Toolkit](React) | Main state manager
+- [Redux Thunk](React) | Handle state change due to async code
+- [Styled-Components](React) | Styling
+- [Axios](React) | HTTP requests
+- [Axios (Interceptors)](React) | 403 handler for expired Access Tokens, generating new ones through the Refresh Token route
+
+## Support tools
+- [AMAZON s3](React) | Storage service
+- [Stripe](React) | Payment services
+- [JWT Tokens](React) | Accesss and Refresh tokens for Auth, stored in httpOnly Cookie
+- ***Note:** more tools and technologies were used in the server API for this application, where you can check it [here](https://github.com/muhhx/Vanilla-Ecommerce-Backend)*
 
 ## Functionality guide
 - Navigate through our products, filter them based on your needs and interests, find the one you like, add to the cart (and to your list of favorite products), checkout and buy it using your credit cart!
@@ -70,26 +90,6 @@ You can check all of the screens, as well as a website walkthrough, by clicking 
   - Create, update and delete the categories (Shirts, Jackets, etc)
   - Create, update and delete the collections (AW21, SS21, etc)
       - Set the collection to be displayed at the home screen
-
-## Built with (client)
-- [Typescript](TypeScript) | More transparency and control over the code
-- [React](React) | React functional components
-- [React-Router-Dom v6](React) | Router
-- [React Context API](React) | Manage simple states
-- [React-Loader-Spinner](React) | Simple library for the UI Spinner component
-- [Redux Toolkit](React) | Main state manager
-- [Redux Thunk](React) | Handle state change due to async code
-- [Styled-Components](React) | Styling
-- [Axios](React) | HTTP requests
-- [Axios (Interceptors)](React) | 403 handler for expired Access Tokens, generating new ones through the Refresh Token route
-
-## Support tools
-- [AMAZON s3](React) | Storage service
-- [Stripe](React) | Payment services
-- [JWT Tokens](React) | Accesss and Refresh tokens for Auth, stored in httpOnly Cookie
-</br>
-
-- ***Note:** more tools and technologies were used in the server API for this application, where you can check it [here](https://github.com/muhhx/Vanilla-Ecommerce-Backend)*
 
 
 
