@@ -1,49 +1,48 @@
 <h1>Vanilla E-commerce</h1>
-<div align="center">
 
-[![Linkedin Badge](https://img.shields.io/badge/-Murilo%20Santos-231f20?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/giovannalinda)](https://www.linkedin.com/in/muhhx)
-[![Gmail Badge](https://img.shields.io/badge/-muriloue@gmail.com-231f20?style=flat-square&logo=Gmail&logoColor=white&link=mailto:muriloue@gmail.com)](mailto:muriloue@gmail.com)
+<h4 align="center">
+  <img alt="Readme" title="Readme" src="./preview/PREVIEW_NAVIGATION.gif" />
+  <img alt="Readme" title="Readme" src="./preview/PREVIEW_BUYING.gif" />
+</h4>
 
-</div>
-<p align="center">
-    <a href="#About this Project">About</a> -
-    <a href="#Sobre">Sobre</a> -
-    <a href="#Preview">Preview</a> -
-    <a href="#Funcionalidades">Funcionalidades</a> -
-    <a href="#Built">Tecnologias</a>
-</p>
+You can check all of the screens and gifs with previews by clicking [here](https://github.com/muhhx/Vanilla-Ecommerce-Frontend/tree/main/preview)
 
 ## About this Project
+- **Live website:** <https://vanillaec.herokuapp.com/>
+- **Server API repository:** <https://github.com/muhhx/Vanilla-Ecommerce-Backend/> 
+</br>
+- Let's connect on LinkedIn: <https://www.linkedin.com/in/muhhx/>
+- Send me an email: muriloue@gmail.com
+
 The idea of the app was to build a place to share and curate my clothing interests from differents brands and collections, so I came to the conclusion that there was no better way than creating a fully functional ecommerce so I could show them off 😅.
+
 The App includes Authentication, Payment methods, Theme switcher, and a variety of other functionalities that enhance the user experience, integrating it to third-party services like AWS and Stripe.
+
 I also put a lot of time and efford on the admin page, creating a intuitive and easy administration panel to manage our products, categories, collections, and the whole website tbh.
 
-- Live website: <https://vanillaec.herokuapp.com/>
-- Server API repository: <https://github.com/muhhx/Vanilla-Ecommerce-Backend/> 
 
 ## Some observations
 - This project is part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
 - I started this app some months ago, so there are some things that I did back then that I could have done better, such as using Typescript generics with Axios, to type the API response. Regardless, the app is working the same way.
 
-## Preview
-You can check all of the screens, as well as a website walkthrough, by clicking [here](linktosomething)
 
 ## Built with (client)
-- [Typescript](TypeScript) | More transparency and control over the code
-- [React](React) | React functional components
-- [React-Router-Dom v6](React) | Router
-- [React Context API](React) | Manage simple states
-- [React-Loader-Spinner](React) | Simple library for the UI Spinner component
-- [Redux Toolkit](React) | Main state manager
-- [Redux Thunk](React) | Handle state change due to async code
-- [Styled-Components](React) | Styling
-- [Axios](React) | HTTP requests
-- [Axios (Interceptors)](React) | 403 handler for expired Access Tokens, generating new ones through the Refresh Token route
+- [Typescript](https://www.typescriptlang.org/) | More transparency and control over the code
+- [React](https://reactjs.org/docs/getting-started.html) | React functional components
+- [React-Router-Dom v6](https://reactrouter.com/docs/en/v6/getting-started/overview) | Router
+- [React Context API](https://reactjs.org/docs/context.html) | Manage simple states
+- [React-Loader-Spinner](https://www.npmjs.com/package/react-loader-spinner) | Simple library for the UI Spinner component
+- [Redux Toolkit](https://redux-toolkit.js.org/) | Main state manager
+- [Redux Thunk](https://redux.js.org/usage/writing-logic-thunks) | Handle state change due to async code
+- [Styled-Components](https://styled-components.com/) | Styling
+- [Axios](https://axios-http.com/docs/intro) | HTTP requests
+- [Axios (Interceptors)](https://axios-http.com/docs/interceptors) | 403 handler for expired Access Tokens, generating new ones through the Refresh Token route
 
 ## Support tools
-- [AMAZON s3](React) | Storage service
-- [Stripe](React) | Payment services
-- [JWT Tokens](React) | Accesss and Refresh tokens for Auth, stored in httpOnly Cookie
+- [AMAZON s3](https://aws.amazon.com/s3/) | Storage service
+- [Stripe](https://stripe.com/en-br) | Payment services
+- [JWT Tokens](https://jwt.io/) | Accesss and Refresh tokens for Auth, stored in httpOnly Cookie
+  </br>
 - ***Note:** more tools and technologies were used in the server API for this application, where you can check it [here](https://github.com/muhhx/Vanilla-Ecommerce-Backend)*
 
 ## Functionality guide
