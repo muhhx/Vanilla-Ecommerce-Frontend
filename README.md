@@ -10,7 +10,7 @@ You can check all of the screens and gifs with previews by clicking [here](https
 ## About this Project
 - **Live website:** <https://vanillaec.herokuapp.com/>
 - **Server API repository:** <https://github.com/muhhx/Vanilla-Ecommerce-Backend/> 
-</br>
+&nbsp;
 - Let's connect on LinkedIn: <https://www.linkedin.com/in/muhhx/>
 - Send me an email: muriloue@gmail.com
 
@@ -19,12 +19,6 @@ The idea of the app was to build a place to share and curate my clothing interes
 The App includes Authentication, Payment methods, Theme switcher, and a variety of other functionalities that enhance the user experience, integrating it to third-party services like AWS and Stripe.
 
 I also put a lot of time and efford on the admin page, creating a intuitive and easy administration panel to manage our products, categories, collections, and the whole website tbh.
-
-
-## Some observations
-- This project is part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
-- I started this app some months ago, so there are some things that I did back then that I could have done better, such as using Typescript generics with Axios, to type the API response. Regardless, the app is working the same way.
-
 
 ## Built with (client)
 - [Typescript](https://www.typescriptlang.org/) | More transparency and control over the code
@@ -42,7 +36,7 @@ I also put a lot of time and efford on the admin page, creating a intuitive and 
 - [AMAZON s3](https://aws.amazon.com/s3/) | Storage service
 - [Stripe](https://stripe.com/en-br) | Payment services
 - [JWT Tokens](https://jwt.io/) | Accesss and Refresh tokens for Auth, stored in httpOnly Cookie
-  </br>
+&nbsp;
 - ***Note:** more tools and technologies were used in the server API for this application, where you can check it [here](https://github.com/muhhx/Vanilla-Ecommerce-Backend)*
 
 ## Functionality guide
