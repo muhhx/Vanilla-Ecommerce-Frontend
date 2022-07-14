@@ -9,12 +9,13 @@ You can check all of the screens and gifs with previews by clicking [here](https
 
 ## About this Project
 - **Live website:** <https://vanillaec.herokuapp.com/>
-- **Server API repository:** <https://github.com/muhhx/Vanilla-Ecommerce-Backend/> 
-&nbsp;
+- **Server API repository:** <https://github.com/muhhx/Vanilla-Ecommerce-Backend/>
+  
+
 - Let's connect on LinkedIn: <https://www.linkedin.com/in/muhhx/>
 - Send me an email: muriloue@gmail.com
 
-The idea of the app was to build a place to share and curate my clothing interests from differents brands and collections, so I came to the conclusion that there was no better way than creating a fully functional ecommerce so I could show them off 😅.
+The idea of the app was to build a place to share and curate my clothing interests from different brands and collections, so I came to the conclusion that there was no better way than creating a fully functional ecommerce so I could show them off 😅.
 
 The App includes Authentication, Payment methods, Theme switcher, and a variety of other functionalities that enhance the user experience, integrating it to third-party services like AWS and Stripe.
 
