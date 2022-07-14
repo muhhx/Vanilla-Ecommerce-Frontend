@@ -15,11 +15,11 @@ You can check all of the screens and gifs with previews by clicking [here](https
 - Let's connect on LinkedIn: <https://www.linkedin.com/in/muhhx/>
 - Send me an email: muriloue@gmail.com
 
-The idea of the app was to build a place to share and curate my clothing interests from different brands and collections, so I came to the conclusion that there was no better way than creating a fully functional ecommerce so I could show them off 😅.
+The idea of the app was to build a place to share and curate my clothing interests from different brands and collections, so I came to the conclusion that there was no better way than to create a fully functional e-commerce application 😅.
 
-The App includes Authentication, Payment methods, Theme switcher, and a variety of other functionalities that enhance the user experience, integrating it to third-party services like AWS and Stripe.
+The project includes Authentication, Payment methods, a Theme switcher, and various other functionalities that enhance the user experience, integrating it into third-party services like AWS and Stripe.
 
-I also put a lot of time and efford on the admin page, creating a intuitive and easy administration panel to manage our products, categories, collections, and the whole website tbh.
+I've also put a lot of time and effort into the admin page, creating an intuitive and straightforward administration panel to manage our products, categories, collections, and the whole website tbh.
 
 ## Built with (client)
 - [Typescript](https://www.typescriptlang.org/) | More transparency and control over the code
@@ -41,8 +41,8 @@ I also put a lot of time and efford on the admin page, creating a intuitive and 
 - ***Note:** more tools and technologies were used in the server API for this application, where you can check it [here](https://github.com/muhhx/Vanilla-Ecommerce-Backend)*
 
 ## Functionality guide
-- Navigate through our products, filter them based on your needs and interests, find the one you like, add to the cart (and to your list of favorite products), checkout and buy it using your credit cart!
-- In the Menu, you can navigate throught the many collections and learn more about them, see their information, look book images, and even their products
+- Navigate through our products, filter them based on your needs and interests, find the one you like, add it to the cart (and to your list of favorite products), checkout, and buy it using your credit cart!
+- In the Menu, you can navigate through the many collections and learn more about them, see their information, Look Book images, and even their products
 - Basic user experience functionalities
   - Responsive Interface for all screens
   - Theme switcher for dark and light mode
@@ -54,25 +54,25 @@ I also put a lot of time and efford on the admin page, creating a intuitive and 
   - The UI changes based on the product conditions
 - Product Page
   - Select a color (the images of the product will change based on the color)
-  - Select a size (each color has its own sizes)
+  - Select a size (each color has its own size)
   - Add to the cart (see the price change on the upper-right corner of your screen)
-  - Add to yout list of favorite products
+  - Add to your list of favorite products
   - The UI will change, based on the product conditions
 - User Profile Page
-  - Check your list of favorite products (click in the image to go to the page of the product)
+  - Check your list of favorite products (click on the image to go to the page of the product)
   - Remove products from your list
   - Delete account option
   - Logout option
 - Cart
   - Add more quantity of the same product
-  - Remove the number of quantity of the same product
+  - Remove the amount of quantity of the same product
   - Remove a product and all of its quantities out of the shopping cart
   - Final price updates every time the cart state changes
   - Click checkout to go to the payment page
 - Payment
   - Add your payment information and order our products
   - If you cancel the purchase, you'll be redirected to the cart
-  - After paying the product, you will be redirected to our website success screen
+  - After paying for the product, you will be redirected to our website success screen
   - *you can use 4242 4242 4242 4242 as a card number for testing purposes. Learn more about it [here (Stripe documentation)](https://stripe.com/docs/testing)*
 - Authentication
   - Create an account
@@ -83,8 +83,7 @@ I also put a lot of time and efford on the admin page, creating a intuitive and 
   - Update products (name, gender, category, etc)
   - Create, update and delete the categories (Shirts, Jackets, etc)
   - Create, update and delete the collections (AW21, SS21, etc)
-      - Set the collection to be displayed at the home screen
-
+      - Set the collection to be displayed on the home screen
 
 
 <h4 align="center">Murilo Santos, 2022.✨™</h4>
