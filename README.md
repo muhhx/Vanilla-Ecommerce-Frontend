@@ -1,7 +1,11 @@
 <h1>Vanilla E-commerce</h1>
 
 <h4 align="center">
+  <span>Navigation preview: (wait for the GIF to load!)</span>
   <img alt="Readme" title="Readme" src="./preview/PREVIEW_NAVIGATION.gif" />
+</h4>
+<h4 align="center">
+  <span>Buying a product preview: (wait for the GIF to load!)</span>
   <img alt="Readme" title="Readme" src="./preview/PREVIEW_BUYING.gif" />
 </h4>
 
